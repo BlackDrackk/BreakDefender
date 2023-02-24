@@ -1,24 +1,25 @@
-/*
-Directives de préprocesseurs, le préprocesseur est un programme qui va parser les fichiers (parcourir les fichiers) et à chaque instruction/directives il va executer l'ordre qu'on lui donne ici "include ..."" 
-*/
 
-#include <iostream>
+#include <Windows.h>
 
-/*
-Fonction principale "main"
-Tous les programmes commencent par la fonction main
-*/
-
-
-int main()
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
-    int age = 0;
-    std::cout << "How old are you ?";
-    std::cin >> age;
-    std::cout << "I am : " << age;
+    int msgboxID = MessageBoxW(
+        NULL,
+        (LPCWSTR)L"Ressources not available !\nDo you want to try again !", 
+        (LPCWSTR)L"Account Details", MB_ICONWARNING | MB_OKCANCEL | MB_DEFBUTTON1);
+    
+    // switch (msgboxID)
+    // {
+    // case IDCONTINUE:
+    //     break;
 
-    return 0;
+    // case IDTRYAGAIN:
+    //     break;
+
+    // case IDCANCEL:
+    //     break;
+    // }
+
+    return msgboxID;
 }
-
-
 
