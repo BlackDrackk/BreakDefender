@@ -88,4 +88,4 @@ We will use [AWS service](https://aws.amazon.com/) to create a virtual machine a
 
 As engineering students majoring in Cybersecurity, we have to master different aspects of this field. For that, this project is perfect for us because it covers malwares, programming; forensics; antiviruses and phishing attacks. So, it’s an interesting project with many works and research to do.  
 
-The end goal of this project is to bypass windows defender with a malware. It was carried out in previous years by students from ESME Sudria without being completed.
+The end goal of this project is to bypass windows defender with a malware.
