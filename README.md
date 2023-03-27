@@ -41,12 +41,19 @@ You must also generate a key pair to connect remotly to your AWS instance using 
 
 Mailjet is a service for email delivery. Our phishing email link will go through our domain then mailjet to be received by our potential victims.
 
-You will have to configure your DNS records by adding a SPF TXT record and TXT record. If you did, everything should be green
+You will have to configure your DNS records by adding a SPF TXT record and TXT record. If you did, everything should be green.
 
 ![image](https://user-images.githubusercontent.com/80312634/227162792-3b111c2f-cf8d-4603-8ea2-95a2eb021efe.png)
 
+You also have to verify your domain name.
+
+![image](https://user-images.githubusercontent.com/80312634/228022183-9362bcf0-6291-4dea-868f-65a9cbfd4cf1.png)
+
+There we go, mailjet is set up.
 
 ![image](https://user-images.githubusercontent.com/80312634/227162836-439494b4-1cb0-486b-a1f2-d00400b33989.png)
+
+
 
 
 ### Domain name
@@ -58,19 +65,19 @@ For this project, we choose Ionos for our web hosting company. But we can choose
 
 In your DNS records, you will have to create records as shown below:
 
-![image](https://user-images.githubusercontent.com/80312634/227160189-634d2cb0-31f2-4638-b648-aa442f9199c3.png)
+![image](https://user-images.githubusercontent.com/80312634/228021532-f78b87fe-6b69-4667-bb85-6654d0da76e5.png)
 
 
 
 | Number of Records | Type | Usage                       |
 | ------------------|:----:| ---------------------------:|
-| 4                 | A    | with IP of AWS public ip    |
-| 2                 | TXT  | for Mailjet                 |
+| 5                 | A    | with AWS public ip    |
+| 3                 | TXT  | for Mailjet                 |
 | 1                 | TXT  | for evilgophish certificate |
 
 > Be careful, AWS ip can change if you restart your instance 
 
-> Also, for mailjet, one is a SPF TXT record and the other one is normal TXT record
+> Also, for mailjet, one is a SPF TXT record and the other two are normal TXT records
 
 
 ### Evilgophish
@@ -118,7 +125,7 @@ Then to access the evilgophish dashboard, we must enter the following command wi
 ssh -L 3333:127.0.0.1:3333 -i <private_key_file_to_access_AWS> <user>:<AWS_public_ip>
 ```
 
-`<user>` should be ubuntu if you create a ubuntu instance on AWS.
+`<user>` should be `ubuntu` if you create a ubuntu instance on AWS.
 
 You can now access Gophish page at this IP address:
 
@@ -186,16 +193,24 @@ sudo apt install apache2
 ### Phishing campaign
 ---
 
+Create a User/Group for the victim's email
 
 ![image](https://user-images.githubusercontent.com/80312634/227782709-6e4c4ddc-335c-424e-acad-b8a6b7f1ad19.png)
 
+Then you have to create a sending profile with the smtp 
 
-You also need an email template
+![image](https://user-images.githubusercontent.com/80312634/228037070-b9601fa1-2fa1-4ca8-98b9-09c5d1b867b3.png)
 
-![image](https://user-images.githubusercontent.com/80312634/227782825-b92539d4-d14d-4826-a1f2-0e4cc856284a.png)
+You can find the smtp server, username and password in mailjet.
 
+>The username is your api.
+>The password is your secret key.
 
-![image](https://user-images.githubusercontent.com/80312634/227782877-6183a6ce-4fb6-4a5d-8518-1a84b0b5ca59.png)
+![image](https://user-images.githubusercontent.com/80312634/228024329-a3584747-3f4c-4395-9779-c3d1c135aa82.png)
+
+Next time is email creation and then you can launch a campaign.
+
+![image](https://user-images.githubusercontent.com/80312634/228037155-339f8294-37a5-43ee-b936-3cab17682039.png)
 
 
 
