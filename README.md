@@ -1,6 +1,7 @@
 # Malware Project “Bypass antivirus with malware programming and forensics methodology”
 
-This project is supposed to bypass windows defender and create a backdoor through a phishing link. This github is a step-by-step for setting up the environment. 
+The purpose of this project is to bypass Windows Defender and create a backdoor with a Malware (executable file) using a phishing method attack. This github is a step-by-step for setting up the environment.
+The primary objective of this project is to bypass Windows Defender and develop a stealthy backdoor by leveraging a Malware (executable file) through a phishing attack method. This GitHub repository serves as a comprehensive guide, providing step-by-step instructions on how we successfully bypassed Windows Defender.
 
 
 ## Table of Contents:
@@ -15,13 +16,15 @@ This project is supposed to bypass windows defender and create a backdoor throug
            - [Evilginx2](#evilginx2)
       - [Apache](#apache)
       - [Phishing campaign](#phishing-campaign)
-   - [Malware tools](#malware-tools)
-   - [About us](#about-us)
+      - [Demo](#demo)
+   - [Malware part](#malware-part)
 
 
 ## Principle of attack
 
 ![image](https://user-images.githubusercontent.com/80312634/227156955-5988f20d-ddf4-4cf4-8a12-cfc88e23ab5f.png)
+
+
 
 
 ## Phishing part
@@ -212,10 +215,12 @@ Next time is email creation and then you can launch a campaign.
 
 ![image](https://user-images.githubusercontent.com/80312634/228037155-339f8294-37a5-43ee-b936-3cab17682039.png)
 
+### Demo
+---
 
+VIDEO
 
-
-## Malware tools
+## Malware part
 
 We need to install multiples tools in Windows Virtual Machine:
 
@@ -238,9 +243,3 @@ We need to install multiples tools in Windows Virtual Machine:
 msfvenom --platform windows -- arch x64 -p windows/x64/exec CMD = calc.exe -b \x00\x0A\x0D  -f c
 ```
 
-
-## About us
-
-As engineering students majoring in Cybersecurity, we have to master different aspects of this field. For that, this project is perfect for us because it covers malwares, programming; forensics; antiviruses and phishing attacks. So, it’s an interesting project with many works and research to do.  
-
-The end goal of this project is to bypass windows defender with a malware.
